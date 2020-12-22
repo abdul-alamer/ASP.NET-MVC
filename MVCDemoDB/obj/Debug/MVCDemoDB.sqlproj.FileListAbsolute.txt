@@ -1,0 +1,6 @@
+C:\Users\abdul\Desktop\New folder (3)\MVCDemoDB\bin\Debug\MVCDemoDB.dacpac
+C:\Users\abdul\Desktop\New folder (3)\MVCDemoDB\bin\Debug\MVCDemoDB.dll
+C:\Users\abdul\Desktop\New folder (3)\MVCDemoDB\bin\Debug\MVCDemoDB.pdb
+C:\Users\abdul\Desktop\New folder (3)\MVCDemoDB\obj\Debug\MVCDemoDB.sqlprojAssemblyReference.cache
+C:\Users\abdul\Desktop\New folder (3)\MVCDemoDB\obj\Debug\MVCDemoDB.dll
+C:\Users\abdul\Desktop\New folder (3)\MVCDemoDB\obj\Debug\MVCDemoDB.pdb

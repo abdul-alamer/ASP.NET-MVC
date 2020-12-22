@@ -1,0 +1,92 @@
+﻿@model IEnumerable<MVCApp.Models.PatientModel>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="~/Scripts/jquery.dataTables.js" defer></script>
+    <link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" language="javascript" class="init">
+
+
+
+
+
+
+
+
+        $(document).ready(function () {
+            $('#example').dataTable();
+        });
+
+
+
+    </script>
+</head>
+<body class="dt-example">
+   
+    
+    <div class="container">
+        <section>
+
+            <div class="demo-html"></div>
+            <table id="example" class="display" style="width: 100%;border: ridge;border-collapse: separate;border-spacing: 0 15px;"border="1">
+                <thead>
+                    <tr style="background-color:gainsboro;">
+                        <th>@Html.DisplayNameFor(model => model.PatientId)</th>
+                        <th>@Html.DisplayNameFor(model => model.Name)</th>
+                        <th> @Html.DisplayNameFor(model => model.Age)</th>
+                        <th>Dosage(ml/mol)</th>
+
+                    </tr>
+                </thead>
+                <tbody style="background-color:lightblue;">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PatientId)
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Age)
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dosage)
+                            </td>
+                            
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr style="background-color:gainsboro;">
+                        <th>Patient ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Dosage(ml/mol)</th>
+
+                    </tr>
+                </tfoot>
+            </table>
+
+        </section>
+
+        <br />
+
+</body>
+</html>
+
+
+
+
+
+
+

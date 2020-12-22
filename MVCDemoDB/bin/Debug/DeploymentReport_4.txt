@@ -1,0 +1,19 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Patient]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column Name in table [dbo].[Patient] is currently  INT NULL but is being changed to  TEXT NULL. There is no
+         implicit or explicit conversion.
+
+** User actions
+     Table rebuild
+       [dbo].[Patient] (Table)
+
+** Supporting actions
+
+The type for column Name in table [dbo].[Patient] is currently  INT NULL but is being changed to  TEXT NULL. There is no implicit or explicit conversion.
+

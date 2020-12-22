@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Rename
+       [dbo].[Employee].[PatientId] (Column)
+       [dbo].[Employee].[Name] (Column)
+       [dbo].[Employee].[Age] (Column)
+       [dbo].[Employee].[Dosage] (Column)
+     Create
+       [dbo].[Patient] (Table)
+
+** Supporting actions

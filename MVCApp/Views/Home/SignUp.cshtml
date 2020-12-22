@@ -1,0 +1,155 @@
+﻿@model MVCApp.Models.PatientModel
+
+@{
+    ViewBag.Title = "Employee Regist";
+}
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+
+<script src="~/Scripts/source.js"></script>
+<script type="text/javascript">
+
+
+    var dosage = 0;
+    FusionCharts.ready(function () {
+        var chartObj = new FusionCharts({
+            type: 'cylinder',
+            dataFormat: 'json',
+            renderAt: 'chart-container',
+            width: '250',
+            height: '350',
+            dataSource: {
+                "chart": {
+                    "theme": "fusion",
+                    "lowerLimit": "0",
+                    "upperLimit": "120",
+                    "lowerLimitDisplay": "Empty",
+                    "upperLimitDisplay": "Full",
+                    "numberSuffix": " ml/mol",
+                    "showValue": "1",
+                    "chartBottomMargin": "45",
+                    "showValue": "0"
+                },
+                "annotations": {
+                    "origw": "400",
+                    "origh": "190",
+                    "autoscale": "1",
+                    "groups": [{
+                        "id": "range",
+                        "items": [{
+                            "id": "rangeBg",
+                            "type": "rectangle",
+                            "x": "$canvasCenterX-45",
+                            "y": "$chartEndY-30",
+                            "tox": "$canvasCenterX +45",
+                            "toy": "$chartEndY-75",
+                            "fillcolor": "#add8e6"
+                        }, {
+                            "id": "rangeText",
+                            "type": "Text",
+                            "fontSize": "11",
+                            "text": "80 ltrs",
+                            "x": "$chartCenterX-45",
+                            "y": "$chartEndY-50"
+                        }]
+                    }]
+                }
+
+            },
+            "events": {
+                "rendered": function (evtObj, argObj) {
+                    var fuelVolume = 110;
+                    evtObj.sender.chartInterval = setInterval(function () {
+                        (fuelVolume < 10) ? (fuelVolume = 80) : "";
+
+                        $("#DOSAGE").keyup(function () {
+                            dosage = $(this).val(); // getting the value from textarea
+ 
+
+                        });
+                        $("#chart-container").click(function (e) {
+                            dosage = (e.screenX + e.screenY / 2) % 110;
+                                 $("#DOSAGE").val(dosage)
+
+                        });
+                        evtObj.sender.feedData && evtObj.sender.feedData("&value=" + dosage); //this function change vlaue of data
+                        fuelVolume = consVolume;
+                    }, 1000);
+                },
+
+
+
+            }
+        }
+        );
+        chartObj.render();
+    });
+
+</script>
+
+<h2>Patient Registration.</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Fill up your Information</h4>
+    <hr />
+    <table>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <tr>
+
+            <td>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td >
+                <div class="form-group" style="margin-right:10em; ">
+                    @Html.LabelFor(model => model.Dosage, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Dosage, new { htmlAttributes = new { @class = "form-control", @id = "DOSAGE" } })
+                        @Html.ValidationMessageFor(model => model.Dosage, "", new { @class = "text-danger" })
+                    </div>
+            </td>
+            <td>
+                <div id="chart-container">FusionCharts XT will load here!</div>
+            </td>
+            </tr>
+       
+ 
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">:
+            <input type="submit" value="Register" class="btn btn-default" style="width:150em; margin-right:55em" />
+        </div>
+    </div>
+</div>
+   
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

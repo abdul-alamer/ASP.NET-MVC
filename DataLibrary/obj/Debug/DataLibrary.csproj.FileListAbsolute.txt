@@ -1,0 +1,9 @@
+C:\Users\abdul\Desktop\New folder (3)\DataLibrary\bin\Debug\DataLibrary.dll
+C:\Users\abdul\Desktop\New folder (3)\DataLibrary\bin\Debug\DataLibrary.pdb
+C:\Users\abdul\Desktop\New folder (3)\DataLibrary\bin\Debug\Dapper.dll
+C:\Users\abdul\Desktop\New folder (3)\DataLibrary\bin\Debug\Dapper.xml
+C:\Users\abdul\Desktop\New folder (3)\DataLibrary\obj\Debug\DataLibrary.csprojAssemblyReference.cache
+C:\Users\abdul\Desktop\New folder (3)\DataLibrary\obj\Debug\DataLibrary.csproj.CoreCompileInputs.cache
+C:\Users\abdul\Desktop\New folder (3)\DataLibrary\obj\Debug\DataLibrary.csproj.CopyComplete
+C:\Users\abdul\Desktop\New folder (3)\DataLibrary\obj\Debug\DataLibrary.dll
+C:\Users\abdul\Desktop\New folder (3)\DataLibrary\obj\Debug\DataLibrary.pdb
